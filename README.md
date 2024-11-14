@@ -102,7 +102,7 @@ Ejemplo:
 
 4. **Ejecutar el cliente TCP**:
    ```bash
-   python tcp_client_kosmos.py  
+   python tcp_client_kosmos.py 
    ```
 
 Ejemplo:
