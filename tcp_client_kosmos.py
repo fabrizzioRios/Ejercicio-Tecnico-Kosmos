@@ -3,7 +3,7 @@ import socket
 
 def start_kosmos_client():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    host = '127.0.0.1'
+    host = 'dev.kosmos_server'
     port = 5000
 
     try:

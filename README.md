@@ -59,3 +59,52 @@ El proyecto consta de dos componentes principales:
      python tcp_client_kosmos.py
      ```
    - El cliente se conectará al servidor y podrás comenzar a enviar mensajes.
+
+## Ejecución con Docker (Opcional) 🐳
+Si prefieres ejecutar el proyecto en contenedores Docker, sigue estos pasos:
+1. **Construir las imágenes**:
+   ```bash
+   docker compose build     
+   ```
+2. **Ejecutar los contenedores en segundo plano**:
+   ```bash
+   docker compose up -d     
+   ```
+3. **Detener los contenedores**:
+   ```bash
+   docker compose down
+   ```
+## Ejecutar el cliente desde un contenedor de Docker 🐳💾
+1. **Listado de contenedores**:
+   ```bash
+   docker compose ps     
+   ```
+
+Ejemplo:
+
+![img_3.png](img_3.png)
+2. **Entrar al contenedor del cliente**:
+   ```bash
+   docker exec -it kosmos-kosmos_client-1 sh     
+   ```
+
+Ejemplo:
+
+![img_4.png](img_4.png)
+3. **Salir del contenedor**:
+   ```bash
+   /app # exit  
+   ```
+   
+Ejemplo:
+
+![img_6.png](img_6.png)
+
+4. **Ejecutar el cliente TCP**:
+   ```bash
+   python tcp_client_kosmos.py  
+   ```
+
+Ejemplo:
+
+![img_7.png](img_7.png)

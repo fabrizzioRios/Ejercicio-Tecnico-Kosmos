@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  kosmos_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "python tcp_server_kosmos.py"
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    networks:
+      shared:
+        aliases:
+          - dev.kosmos_server
+
+  kosmos_client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    networks:
+      shared:
+        aliases:
+          - dev.kosmos_client
+    depends_on:
+      - kosmos_server
+
+networks:
+  shared:
+    driver: bridge
